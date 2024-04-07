@@ -1,0 +1,54 @@
+{% extends 'musicbeats/basic.htm' %}
+{% block title %}Upload Your Music{% endblock %}
+
+{% block body %}
+
+<div style="background-color: #000000; padding-top: 2%;">
+    <h2 class="text-center my-4" style="color: #8a4baf;">Upload Your Music</h2>
+
+    <div class="container my-3">
+        <form action="/musicbeats/upload" enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="songName" style="color: #8a4baf;">Your Music Name</label>
+                <input type="text" class="form-control" id="songName" name="name" placeholder="Your Song Name" style="border-color: #8a4baf;">
+            </div>
+
+            <div class="form-group">
+                <label for="singerName" style="color: #8a4baf;">Singer Name</label>
+                <input type="text" class="form-control" id="singerName" name="singer" placeholder="Singer Name" style="border-color: #8a4baf;">
+            </div>
+
+            <div class="form-group">
+                <label for="tags" style="color: #8a4baf;">Tags</label>
+                <input type="text" class="form-control" id="tags" name="tag" placeholder="Tags (Seperate By Commas)" style="border-color: #8a4baf;">
+            </div>
+
+            <div class="form-group">
+                <label for="imageLink" style="color: #8a4baf;">Image Link: (Associated With Your Music)</label>
+                <input type="text" class="form-control" id="imageLink" name="image" placeholder="Link to Image" style="border-color: #8a4baf;">
+            </div>
+
+            <div class="form-group">
+                <label for="movieName" style="color: #8a4baf;">Movie Name</label>
+                <input type="text" class="form-control" id="movieName" name="movie" placeholder="Movie name in which this song is there" style="border-color: #8a4baf;">
+            </div>
+
+            <div class="form-group">
+                <label for="credit" style="color: #8a4baf;">Credit</label>
+                <input type="text" class="form-control" id="credit" name="credit" placeholder="Add Credit Link" style="border-color: #8a4baf;">
+            </div>
+
+            <div class="form-group">
+                <label for="musicFile" style="color: #8a4baf;">Upload Music File</label>
+                <input type="file" class="form-control-file" id="musicFile" name="file" style="border-color: #8a4baf;">
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary" style="background-color: #8a4baf; border-color: #8a4baf;">Upload</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'musicbeats/basic.htm' %}
+
+{% block title %}SignUp{% endblock %}
+
+{% block body %}
+<div style="background-color: #222222;">
+<div class="container justify-content" style="background-color: #222222;">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5" style="background-color: #66558D; border-radius: 15px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1), 0px 6px 6px rgba(0, 0, 0, 0.1), 0px 3px 8px rgba(0, 0, 0, 0.15);">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4" style="color: #FFFFFF;">Sign Up</h2>
+                    <form method="POST" action="/musicbeats/signup">
+                        {% csrf_token %}
+                        <style>
+                            .form-control:focus {
+                                border-color: #000000;
+                                box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
+                            }
+                        </style>
+                        <div class="form-group">
+                            <label for="email" style="color: #FFFFFF;">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email address" name="email" style="background-color: #FFFFFF; border: 1px solid #A79DBD; border-radius: 10px;">
+                        </div>
+                        <div class="form-group">
+                            <label for="username" style="color: #FFFFFF;">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="Username" name="username" style="background-color: #FFFFFF; border: 1px solid #A79DBD; border-radius: 10px;">
+                        </div>
+                        <div class="form-group">
+                            <label for="firstname" style="color: #FFFFFF;">First Name</label>
+                            <input type="text" class="form-control" id="firstname" placeholder="First Name" name="firstname" style="background-color: #FFFFFF; border: 1px solid #A79DBD; border-radius: 10px;">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname" style="color: #FFFFFF;">Last Name</label>
+                            <input type="text" class="form-control" id="lastname" placeholder="Last Name" name="lastname" style="background-color: #FFFFFF; border: 1px solid #A79DBD; border-radius: 10px;">
+                        </div>
+                        <div class="form-group">
+                            <label for="password1" style="color: #FFFFFF;">Password</label>
+                            <input type="password" class="form-control" id="password1" placeholder="Password" name="pass1" style="background-color: #FFFFFF; border: 1px solid #A79DBD; border-radius: 10px;">
+                        </div>
+                        <div class="form-group">
+                            <label for="password2" style="color: #FFFFFF;">Confirm Password</label>
+                            <input type="password" class="form-control" id="password2" placeholder="Re-entry Password" name="pass2" style="background-color: #FFFFFF; border: 1px solid #A79DBD; border-radius: 10px;">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" style="background-color: #9A77AA; border: none; border-radius: 10px;">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

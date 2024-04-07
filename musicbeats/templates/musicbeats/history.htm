@@ -1,0 +1,34 @@
+{%extends 'musicbeats/basic.htm'%}
+{% block title%}MusicBeats{% endblock %}
+
+{% block body %}
+<div style="background-color: #222222; height: 100%;">
+{% load static %}
+<h1 style="color: rgb(215, 86, 202); text-align: center;">History</h1>
+
+{% if history|length < 1 %} <h3 style="text-align: center; padding-top: 5%;">You have no song in your History</h3>
+  {% endif %}
+
+  <div class="container">
+    {% for i in history reversed %}
+    <div class="card mb-3" style="max-width: 940px; padding-top: 0%; background-color: rgb(215, 86, 202);">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{{i.image}}" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title" style="color: white; font-weight: 550;">{{i.name}}</h5>
+            <!-- <p class="card-text">Tags: {{i.tags}}</p> -->
+            <p class="card-text">Movie: {{i.movie}}</p>
+            <a href="/musicbeats/songs/{{i.song_id}}"><button class="btn btn-outline-danger">Play now</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+  </div>
+
+  {% endblock %}

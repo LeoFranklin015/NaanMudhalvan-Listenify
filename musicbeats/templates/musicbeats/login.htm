@@ -1,0 +1,25 @@
+{% extends 'musicbeats/basic.htm' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #222222;">
+    <div style="width: 400px; background-color: #9A77AA; border-radius: 15px; padding: 20px; 
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1), 0px 6px 6px rgba(0, 0, 0, 0.1), 
+                            0px 3px 8px rgba(0, 0, 0, 0.15); transition: all 0.3s;">
+        <div style="text-align: center;">
+            <h2 style="color: #FFFFFF; margin-bottom: 20px;">Login</h2>
+        </div>
+        <form action="/musicbeats/login" method="POST">
+            {% csrf_token %}
+            <div style="margin-bottom: 15px;">
+                <input type="text" style="width: 100%; padding: 15px; border: 1px solid #7F5A83; border-radius: 10px; background-color: #FFFFFF; color: #000000;" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" placeholder="Your Username">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <input type="password" style="width: 100%; padding: 15px; border: 1px solid #7F5A83; border-radius: 10px; background-color: #FFFFFF; color: #000000;" id="exampleInputPassword1" placeholder="Password" name="password">
+            </div>
+            <button type="submit" style="width: 100%; padding: 15px; background-color: #574B6B; border: none; color: #FFFFFF; border-radius: 10px; cursor: pointer;">Login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
